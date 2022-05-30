@@ -6,9 +6,11 @@ import android.os.Bundle
 import com.csibtn.quizapp.databinding.ActivityMainBinding
 
 
-lateinit var binder : ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
+
+    lateinit var binder : ActivityMainBinding
+
     override fun onCreate(savedInstanceState: Bundle?) {
         binder = ActivityMainBinding.inflate(layoutInflater)
         super.onCreate(savedInstanceState)
@@ -19,8 +21,10 @@ class MainActivity : AppCompatActivity() {
         startButton.setOnClickListener{
             val name = binder.etName.text.toString()
             if(name.isNotEmpty()){
-                val intent = Intent(this,QuizQuestionsActivity::class.java)
-                startActivity(intent)
+                  Intent(this,QuizQuestionsActivity::class.java).also {
+                    startActivity(it)
+                }
+
             }
         }
     }
