@@ -7,4 +7,8 @@
     <string name="button_text">Start</string>
     <string name="qst_Image">question_image</string>
     <string name="btnSubmit_text">SUBMIT</string>
+    <string name="result">Result</string>
+    <string name="resultDescription">trophy_icon</string>
+    <string name="congratulations">Congratulations!</string>
+    <string name="finish">FINISH</string>
 </resources>

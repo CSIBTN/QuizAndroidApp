@@ -57,8 +57,7 @@ class QuizQuestionsActivity : AppCompatActivity(), View.OnClickListener {
     }
 
     private fun setQuestion() {
-
-        var currentPosition = 1
+        defaultOptionsView()
         val question = questions[currentPosition - 1]
         progressBar.progress = currentPosition
         tvProgress.text = "$currentPosition/${progressBar.max}"
@@ -68,10 +67,6 @@ class QuizQuestionsActivity : AppCompatActivity(), View.OnClickListener {
         secondOption.text = question.secondOption
         thirdOption.text = question.thirdOption
         fourthOption.text = question.fourthOption
-
-        if(currentPosition == questions.size){
-            btnSubmit.text = "finish"
-        }
     }
 
     private fun defaultOptionsView(){
@@ -103,7 +98,38 @@ class QuizQuestionsActivity : AppCompatActivity(), View.OnClickListener {
             secondOption.id -> selectedOptionView(secondOption,2)
             thirdOption.id -> selectedOptionView(thirdOption,3)
             fourthOption.id -> selectedOptionView(fourthOption,4)
-            btnSubmit.id -> {}//TODO
+            btnSubmit.id -> {
+                if (selectedOptionPosition == 0){
+                    selectedOptionPosition++
+                    when{
+                        currentPosition <= questions.size -> setQuestion()
+                        else -> {
+
+                        }
+                    }
+                } else {
+                    val question = questions[currentPosition-1]
+                    if(question.correctAnswer != selectedOptionPosition){
+                        answerView(selectedOptionPosition,R.drawable.wrong_option_background)
+                    }
+                    answerView(question.correctAnswer,R.drawable.correct_option_background)
+                    if(currentPosition == questions.size){
+                        btnSubmit.text = "FINISH"
+                    }else{
+                        btnSubmit.text = "GO TO THE NEXT QUESTION"
+                    }
+                    selectedOptionPosition = 0
+                    currentPosition++
+                }
+            }
+        }
+    }
+    private fun answerView(answer : Int, drawableView : Int){
+        when(answer){
+            1 -> firstOption.background = ContextCompat.getDrawable(this,drawableView)
+            2 -> secondOption.background = ContextCompat.getDrawable(this,drawableView)
+            3 -> thirdOption.background = ContextCompat.getDrawable(this,drawableView)
+            4 -> fourthOption.background = ContextCompat.getDrawable(this,drawableView)
         }
     }
 }

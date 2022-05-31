@@ -15,7 +15,7 @@ object Constants {
             1
         )
         val question2 = Question(
-            1,
+            2,
             "Which continent is the driest?",
             R.drawable.driest,
             "Antarctica",
@@ -25,7 +25,7 @@ object Constants {
             1
         )
         val question3 = Question(
-            1,
+            3,
             "What is the most deadly animal on Earth?",
             R.drawable.deadly,
             "White Shark",
@@ -35,7 +35,7 @@ object Constants {
             3
         )
         val question4 = Question(
-            1,
+            4,
             "What is the fastest animal on Earth?",
             R.drawable.fastest,
             "Lion",
@@ -45,17 +45,17 @@ object Constants {
             4
         )
         val question5 = Question(
-            1,
+            5,
             "What is the biggest animal in the world?",
             R.drawable.biggest,
             "Antarctic blue whale",
             "Narwhal",
             "African Elephant",
             "Rhino",
-            2
+            1
         )
         val question6 = Question(
-            1,
+            6,
             "What is the most dangerous liquid in the world?",
             R.drawable.liquids,
             "Ricin",
@@ -65,7 +65,7 @@ object Constants {
             2
         )
         val question7 = Question(
-            1,
+            7,
             "What is the closest galaxy to the Milky Way?",
             R.drawable.galaxies,
             "Draco II",
@@ -75,7 +75,7 @@ object Constants {
             3
         )
         val question8 = Question(
-            1,
+            8,
             "What is the highest building in the world?",
             R.drawable.scyscrapers,
             "Merdeka 118",
